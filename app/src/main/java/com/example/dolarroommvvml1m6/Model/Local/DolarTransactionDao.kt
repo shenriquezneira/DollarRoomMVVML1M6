@@ -9,8 +9,8 @@ import com.example.dolarroommvvml1m6.Model.Local.DolarTransactionModel
 interface DolarTransactionDao {
 
     @Insert
-    suspend fun insertTransaction(transactionDao: DolarTransactionDao)
+    suspend fun insertTransaction(transactionModel: DolarTransactionModel)
 
     @Query("SELECT * FROM dolar_transaction ORDER BY timestamp DESC")
-    suspend fun getAllTransaction(): List<DolarTransactionModel>
+    suspend fun getAllTransactions(): List<DolarTransactionModel>
 }

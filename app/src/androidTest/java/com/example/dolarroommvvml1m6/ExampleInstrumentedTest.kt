@@ -1,4 +1,4 @@
-package com.example.dollarroommvvml1m6
+package com.example.dolarroommvvml1m6
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

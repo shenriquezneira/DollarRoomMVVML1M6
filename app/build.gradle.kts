@@ -1,9 +1,10 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("com.google.devtools.ksp")
 }
 
 android {
-    namespace = "com.example.dollarroommvvml1m6"
+    namespace = "com.example.dolarroommvvml1m6"
     compileSdk {
         version = release(36)
     }
@@ -36,7 +37,11 @@ android {
     }
 }
 
+val room_version ="2.8.4"
+val lifecycle_version="2.6.2"
+
 dependencies {
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -46,4 +51,16 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+
+    //room
+    implementation("androidx.room:room-runtime:$room_version")
+    implementation("androidx.room:room-ktx:$room_version")
+    ksp("androidx.room:room-compiler:$room_version")
+
+    //lifecycle
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation("androidx-lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+
+    //coroutinas
+    implementation("org.jetbrains.kotlin:kotlin.coroutines-android:1.7.3")
 }
